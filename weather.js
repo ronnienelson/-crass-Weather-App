@@ -5,8 +5,12 @@ let c= b*9/5+32
   return Math.floor(c)
 }
 
-const display= document.querySelector('h1')
-
+const curse=document.querySelector('#curse')
+const specs=document.querySelector('#specs')
+const display= document.querySelector('#cityname')
+const temperature= document.querySelector('#temperature')
+const rating= document.querySelector('#rating')
+const container=document.querySelector('#containers')
 const display2= document.querySelector('#high')
 const display3= document.querySelector('#low')
 const display4= document.querySelector('#condition')
@@ -16,6 +20,8 @@ const form= document.querySelector('form')
 
 form.addEventListener('submit',(e)=>{
   e.preventDefault()
+  specs.hidden=false;
+  curse.hidden=false;
   const input=form.elements.ins.value
   const input2=form.elements.ins2.value
   const input3=form.elements.ins3.value
@@ -29,28 +35,97 @@ form.addEventListener('submit',(e)=>{
   .then(data => {
    const tem=data.main.temp
    console.log(data)
-   //if statements handle potential outcomes and display them on the DOM
-   if(converter(tem)>=36&& converter(tem)<=82 ){
-   display.innerText=`The Temperature in ${input} right now is ${converter(tem)}℉. It's not too fucking hot, and not too fucking cold`
+   
+   if(converter(tem)>=36&& converter(tem)<=65 ){
+     if(data.weather[0].description=='mist'|| data.weather[0].description=='light rain'|| data.weather[0].description=='rain' ||
+       data.weather[0].description=='heavy rain'){  container.style.backgroundImage="url('https://www.teahub.io/photos/full/186-1866807_sprinkling-rain-gif.gif')"
+                                            
+     }
+     else if(data.weather[0].description=='clear sky'){
+container.style.backgroundImage="url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/sunny-sky-carlos-caetano.jpg')"
+     }
+     else if (data.weather[0].description=='overcast clouds'){
+       container.style.backgroundImage="url('https://images.unsplash.com/photo-1534358594138-6955f589fa24?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZGFyayUyMGNsb3VkfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80')"
+     }
+      else if(data.weather[0].description=='few clouds'){
+       container.style.backgroundImage="url('https://images.unsplash.com/photo-1571457403686-45e398766082?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xvdWR5JTIwYmx1ZSUyMHNreXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80')"
+       
+     }
+       
+   
+   display.innerText=`${input}`
+   temperature.innerText=`${converter(tem)}℉`
+   rating.innerText=`Fucking Chilly`
    display2.innerText=`High:${converter(data.main.temp_max)}℉`
    display3.innerText=`Low:${converter(data.main.temp_min)}℉`
    display4.innerText=`Expect: ${data.weather[0].description}`
 
    }
-   else if(converter(tem)>82){
-       display.innerText=`The Temperature in ${input} right now is ${converter(tem)}℉. It's FUCKING HOT HOLY SHITBALLS.`
-       display2.innerText=`High:${converter(data.main.temp_max)}℉`
+   else if(converter(tem)>80){
+     
+      if(data.weather[0].description=='mist'|| data.weather[0].description=='light rain'|| data.weather[0].description=='rain' ||
+       data.weather[0].description=='heavy rain'){  container.style.backgroundImage="url('https://www.teahub.io/photos/full/186-1866807_sprinkling-rain-gif.gif')"
+     }
+     else if(data.weather[0].description=='clear sky'){
+container.style.backgroundImage="url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/sunny-sky-carlos-caetano.jpg')"
+     }
+     else if (data.weather[0].description=='overcast clouds'){
+       container.style.backgroundImage="url('https://images.unsplash.com/photo-1534358594138-6955f589fa24?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZGFyayUyMGNsb3VkfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80')"
+     }
+      else if(data.weather[0].description=='few clouds'){
+       container.style.backgroundImage="url('https://images.unsplash.com/photo-1571457403686-45e398766082?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xvdWR5JTIwYmx1ZSUyMHNreXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80')"
+       
+     }
+     
+   display.innerText=`${input}`
+   temperature.innerText=`${converter(tem)}℉`
+   rating.innerText=`TOO FUCKING HOT`
+   display2.innerText=`High:${converter(data.main.temp_max)}℉`
    display3.innerText=`Low:${converter(data.main.temp_min)}℉`
    display4.innerText=`Expect: ${data.weather[0].description}`
    }
    else if(converter(tem)<=35){
-     display.innerText=`The Temperature in ${input} right now is ${converter(tem)}℉. OH MY FUCKING GOD IT'S FUCKING FREEZING GO INSIDE.`
-     display2.innerText=`High:${converter(data.main.temp_max)}℉`
+     
+      if(data.weather[0].description=='mist'|| data.weather[0].description=='light rain'|| data.weather[0].description=='rain' ||
+       data.weather[0].description=='heavy rain'){  container.style.backgroundImage="url('https://www.teahub.io/photos/full/186-1866807_sprinkling-rain-gif.gif')"
+     }
+     else if(data.weather[0].description=='clear sky'){
+container.style.backgroundImage="url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/sunny-sky-carlos-caetano.jpg')"
+     }
+     else if (data.weather[0].description=='overcast clouds'){
+       container.style.backgroundImage="url('https://images.unsplash.com/photo-1534358594138-6955f589fa24?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZGFyayUyMGNsb3VkfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80')"
+     }
+      else if(data.weather[0].description=='few clouds'){
+       container.style.backgroundImage="url('https://images.unsplash.com/photo-1571457403686-45e398766082?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xvdWR5JTIwYmx1ZSUyMHNreXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80')"
+       
+     }
+     
+   display.innerText=`${input}`
+   temperature.innerText=`${converter(tem)}℉`
+   rating.innerText=`Fucking FREEZING HOLY SHIT`
+   display2.innerText=`High:${converter(data.main.temp_max)}℉`
    display3.innerText=`Low:${converter(data.main.temp_min)}℉`
    display4.innerText=`Expect: ${data.weather[0].description}`
    }
+   
    else{
-      display.innerText=`The Temperature in ${input} right now is ${converter(tem)}℉. It's a little goddamn chilly`
+          if(data.weather[0].description=='mist'|| data.weather[0].description=='light rain'|| data.weather[0].description=='rain' ||
+       data.weather[0].description=='heavy rain'){  container.style.backgroundImage="url('https://www.teahub.io/photos/full/186-1866807_sprinkling-rain-gif.gif')"
+     }
+     else if(data.weather[0].description=='clear sky'){
+container.style.backgroundImage="url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/sunny-sky-carlos-caetano.jpg')"
+     }
+     else if (data.weather[0].description=='overcast clouds'){
+       container.style.backgroundImage="url('https://images.unsplash.com/photo-1534358594138-6955f589fa24?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZGFyayUyMGNsb3VkfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80')"
+     }
+     else if(data.weather[0].description=='few clouds'){
+       container.style.backgroundImage="url('https://images.unsplash.com/photo-1571457403686-45e398766082?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xvdWR5JTIwYmx1ZSUyMHNreXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80')"
+       
+     }
+     
+   display.innerText=`${input}`
+   temperature.innerText=`${converter(tem)}℉`
+   rating.innerText=`NICE AS FUCK`
    display2.innerText=`High:${converter(data.main.temp_max)}℉`
    display3.innerText=`Low:${converter(data.main.temp_min)}℉`
    display4.innerText=`Expect: ${data.weather[0].description}`
