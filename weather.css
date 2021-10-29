@@ -1,4 +1,6 @@
 
+
+
 body{
   text-align:center;
 
@@ -25,6 +27,7 @@ button{
   border-radius:25px;
    background:none;
   color:blue;
+   margin-bottom:1em;
 }
 
 
@@ -34,8 +37,31 @@ form{
   margin:2em;
 }
 
+#specs{
+  border:1px solid;
+  width:30%;
+  border-radius:25px;
+   margin-left:auto;
+  margin-right:auto;
+  background:#F0F8FF;
+  margin-bottom:1em;
+  
+}
+#curse{
+    border:1px solid;
+  width:50%;
+  border-radius:25px;
+   margin-left:auto;
+  margin-right:auto;
+  background:#F0F8FF;
+  margin-bottom:1em;
+}
+
  @media screen and (max-width:812px ){
    #containers{
      width:100%;
+   }
+   #specs{
+     width:50%;
    }
 }
