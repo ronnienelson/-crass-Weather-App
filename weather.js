@@ -1,3 +1,4 @@
+//function converts kelvin to celsius. and then celsius to farenheit.
 const converter=(a)=>{
   let b=a-273.15
 let c= b*9/5+32
@@ -5,13 +6,11 @@ let c= b*9/5+32
 }
 
 const display= document.querySelector('h1')
-
 const display2= document.querySelector('#high')
 const display3= document.querySelector('#low')
 const display4= document.querySelector('#condition')
-
-
 const form= document.querySelector('form')
+
 
 form.addEventListener('submit',(e)=>{
   e.preventDefault()
@@ -28,6 +27,7 @@ form.addEventListener('submit',(e)=>{
   .then(data => {
    const tem=data.main.temp
    console.log(data)
+   //if statements that print different things to the DOM depending on the weather outside
    if(converter(tem)>=36){
    display.innerText=`The Temperature in ${input} right now is ${converter(tem)}℉. It's not too fucking hot, and not too fucking cold`
    display2.innerText=`High:${converter(data.main.temp_max)}℉`
