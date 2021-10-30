@@ -47,7 +47,7 @@ container.style.backgroundImage="url('https://images.fineartamerica.com/images/a
      else if (data.weather[0].description=='overcast clouds'){
        container.style.backgroundImage="url('https://images.unsplash.com/photo-1534358594138-6955f589fa24?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZGFyayUyMGNsb3VkfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80')"
      }
-      else if(data.weather[0].description=='few clouds'){
+      else if(data.weather[0].description=='few clouds' || data.weather[0].description=='broken clouds'){
        container.style.backgroundImage="url('https://images.unsplash.com/photo-1571457403686-45e398766082?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xvdWR5JTIwYmx1ZSUyMHNreXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80')"
        
      }
@@ -72,7 +72,7 @@ container.style.backgroundImage="url('https://images.fineartamerica.com/images/a
      else if (data.weather[0].description=='overcast clouds'){
        container.style.backgroundImage="url('https://images.unsplash.com/photo-1534358594138-6955f589fa24?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZGFyayUyMGNsb3VkfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80')"
      }
-      else if(data.weather[0].description=='few clouds'){
+      else if(data.weather[0].description=='few clouds' || data.weather[0].description=='broken clouds'){
        container.style.backgroundImage="url('https://images.unsplash.com/photo-1571457403686-45e398766082?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xvdWR5JTIwYmx1ZSUyMHNreXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80')"
        
      }
@@ -95,7 +95,7 @@ container.style.backgroundImage="url('https://images.fineartamerica.com/images/a
      else if (data.weather[0].description=='overcast clouds'){
        container.style.backgroundImage="url('https://images.unsplash.com/photo-1534358594138-6955f589fa24?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZGFyayUyMGNsb3VkfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80')"
      }
-      else if(data.weather[0].description=='few clouds'){
+      else if(data.weather[0].description=='few clouds' || data.weather[0].description=='broken clouds'){
        container.style.backgroundImage="url('https://images.unsplash.com/photo-1571457403686-45e398766082?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xvdWR5JTIwYmx1ZSUyMHNreXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80')"
        
      }
@@ -118,7 +118,7 @@ container.style.backgroundImage="url('https://images.fineartamerica.com/images/a
      else if (data.weather[0].description=='overcast clouds'){
        container.style.backgroundImage="url('https://images.unsplash.com/photo-1534358594138-6955f589fa24?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZGFyayUyMGNsb3VkfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80')"
      }
-     else if(data.weather[0].description=='few clouds'){
+     else if(data.weather[0].description=='few clouds' || data.weather[0].description=='broken clouds'){
        container.style.backgroundImage="url('https://images.unsplash.com/photo-1571457403686-45e398766082?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xvdWR5JTIwYmx1ZSUyMHNreXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80')"
        
      }
